@@ -8,13 +8,20 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dotenv import load_dotenv
 import schedule
 
-load_dotenv()
+#load_dotenv()
 
-phone = os.getenv("phone")
-password = os.getenv("password")
-ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
-RECIPIENT_WAID = os.getenv("RECIPIENT_WAID")
-PHONE_NUMBER_ID = os.getenv("PHONE_NUMBER_ID")
+password = os.environ['password1']
+phone = os.environ['phone']
+ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+RECIPIENT_WAID = os.environ['RECIPIENT_WAID']
+PHONE_NUMBER_ID = os.environ['PHONE_NUMBER_ID']
+
+
+# phone = os.getenv("phone")
+# password = os.getenv("password")
+# ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+# RECIPIENT_WAID = os.getenv("RECIPIENT_WAID")
+# PHONE_NUMBER_ID = os.getenv("PHONE_NUMBER_ID")
 VERSION = 'v18.0'
 
 # Function to get the input for the WhatsApp message
