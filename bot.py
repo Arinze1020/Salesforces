@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import schedule
 
 
-password = os.environ['password1']
+password = os.environ['pass']
 phone = os.environ['phone']
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 RECIPIENT_WAID = os.environ['RECIPIENT_WAID']
