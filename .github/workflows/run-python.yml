@@ -27,7 +27,7 @@ jobs:
           pip install -r requirements.txt
           python -m pip install playwright
           playwright install-deps
-          python ssbet.py
+          python bot.py
 
   
 
