@@ -15,11 +15,7 @@ RECIPIENT_WAID = os.environ['RECIPIENT_WAID']
 PHONE_NUMBER_ID = os.environ['PHONE_NUMBER_ID']
 
 
-# phone = os.getenv("phone")
-# password = os.getenv("password")
-# ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
-# RECIPIENT_WAID = os.getenv("RECIPIENT_WAID")
-# PHONE_NUMBER_ID = os.getenv("PHONE_NUMBER_ID")
+
 VERSION = 'v18.0'
 
 # Function to get the input for the WhatsApp message
