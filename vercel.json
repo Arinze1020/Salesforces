@@ -1,9 +1,19 @@
 {
-    "version": 2,
-    "builds": [
-        {"src": "ssbet.py", "use": "@vercel/python"}
-    ],
-    "routes": [
-        {"src": "/(run-playwright)", "dest": "ssbet.py"}
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "ssbet.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/run-playwright",
+      "dest": "ssbet.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "ssbet.py"
+    }
+  ]
 }
