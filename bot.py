@@ -8,6 +8,15 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import schedule
 import subprocess
 
+from random_user_agent.user_agent import UserAgent
+from random_user_agent.params import SoftwareName, OperatingSystem
+
+software_names = [SoftwareName.CHROME.value]
+operating_systems = [OperatingSystem.WINDOWS.value, OperatingSystem.LINUX.value]
+
+user_agent_rotator = UserAgent(software_names=software_names, operating_systems=operating_systems, limit=10000)
+user_agent = user_agent_rotator.get_random_user_agent()
+
 subprocess.call(['sh','./install.sh'])
 
 password = os.environ['password']
@@ -15,6 +24,9 @@ phone = os.environ['phone']
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 RECIPIENT_WAID = os.environ['RECIPIENT_WAID']
 PHONE_NUMBER_ID = os.environ['PHONE_NUMBER_ID']
+
+
+
 
 
 
@@ -65,7 +77,7 @@ def send_bounties_in_parallel(bounties):
 # Function to automate the betting process and send WhatsApp messages
 def run(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=True)
-    context = browser.new_context()
+    context = browser.new_context(user_agent = user_agent)
     page = context.new_page()
 
     # Step 1: Log in to the platform
