@@ -7,8 +7,9 @@ import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import schedule
 
+subprocess.call(['sh','./install.sh'])
 
-password = os.environ['pass']
+password = os.environ['password']
 phone = os.environ['phone']
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 RECIPIENT_WAID = os.environ['RECIPIENT_WAID']
