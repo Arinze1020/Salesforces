@@ -4,7 +4,11 @@ on:
   workflow_dispatch:
 
 env:
-  password: ${{ secrets.password }}
+  password: ${{ secrets.password1}}
+  phone: ${{ secrets.phone }}
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN}}
+  RECIPIENT_WAID: ${{ secrets.RECIPIENT_WAID}}
+  PHONE_NUMBER_ID: ${{ secrets.PHONE_NUMBER_ID }}
   
 jobs:
   run-python:
