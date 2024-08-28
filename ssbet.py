@@ -7,11 +7,26 @@ import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
+import subprocess
+
+from random_user_agent.user_agent import UserAgent
+from random_user_agent.params import SoftwareName, OperatingSystem
+
+software_names = [SoftwareName.CHROME.value]
+operating_systems = [OperatingSystem.WINDOWS.value, OperatingSystem.LINUX.value]
+
+user_agent_rotator = UserAgent(software_names=software_names, operating_systems=operating_systems, limit=10000)
+user_agent = user_agent_rotator.get_random_user_agent()
+
+subprocess.call(['sh','./install.sh'])
+
+
 
 app = Flask(__name__)
 
-phone = os.environ['phone']
+
 password = os.environ['password']
+phone = os.environ['phone']
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 RECIPIENT_WAID = os.environ['RECIPIENT_WAID']
 PHONE_NUMBER_ID = os.environ['PHONE_NUMBER_ID']
@@ -63,7 +78,7 @@ async def send_bounties_in_parallel(bounties):
 async def run():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context()
+        context = await browser.new_context(user_agent = user_agent)
         page = await context.new_page()
 
         # Step 1: Log in to the platform
