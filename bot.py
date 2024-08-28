@@ -5,7 +5,7 @@ import os
 import json
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import schedule
 
 #load_dotenv()
