@@ -93,7 +93,7 @@ def run(playwright: Playwright) -> None:
     page.frame_locator("[id=\"turbo-games\\/aviator\"]").frame_locator("iframe").locator(".cash-out-switcher > .ng-untouched > .input-switch").first.click()
     page.frame_locator("[id=\"turbo-games\\/aviator\"]").frame_locator("iframe").get_by_role("button", name="Bet 100.00 NGN").click()
 
-    time.sleep(50)  # Adjust this based on the required wait time
+    time.sleep(50)  # Adjust this based on the required wait vfgbgf
 
     # Step 3: Check balance
     page1 = context.new_page()
