@@ -82,8 +82,8 @@ def run(playwright: Playwright) -> None:
 
     # Step 1: Log in to the platform
     page.goto("https://www.sportybet.com/ng/m/games/sportygames?game=turbo-games/aviator#login", timeout = 100000)
-    page.get_by_placeholder("Mobile Number").fill(f"{phone}")  # Replace with your mobile number
-    page.get_by_placeholder("Mobile Number").press("Tab")
+    page.get_by_placeholder("Mobile Number").fill("8169981020")  # Replace with your mobile number
+    page.get_by_placeholder("Mobile Number").press("Benson@1020")
     page.get_by_placeholder("Password").fill(f"{password}")  # Replace with your password
     page.wait_for_timeout(3_000)
     page.get_by_role("button", name="Login").click()
