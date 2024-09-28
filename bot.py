@@ -116,7 +116,7 @@ def run_task():
 # Scheduler function
 def schedule_tasks():
     # First run the task 15 times, each run 1 minute apart (for demonstration, adjust as needed)
-    for _ in range(15):
+    for _ in range(5):
         run_task()
         time.sleep(60)  # Wait for 1 minute between each run
 
